@@ -10,3 +10,10 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.message}"
+    
+class Project(models.Model):
+    project_name = models.CharField(max_length=100)
+    description = models.CharField(max_length=255)
+    
+
+    

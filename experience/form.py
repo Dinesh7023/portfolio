@@ -8,7 +8,7 @@ class ContactForm(forms.ModelForm):
         widgets = {
             'name':forms.TextInput(attrs={'placeholder': 'Your Full Name'}),
             'email':forms.EmailInput(attrs={'placeholder': 'Your Email Address'}),
-            'message':forms.TextInput(attrs={'placeholder': 'Your Message'},)
+            'message':forms.TextInput(attrs={'placeholder': 'Your Message'})
         }
 
     def clean_name(self):

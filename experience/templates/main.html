@@ -120,33 +120,34 @@
                 {{ form.name }}
                 <span class="text-danger">
                     {{ form.name.errors }}
-                </span>                
+                </span>
             </p>
 
-             <p>
+            <p>
                 {{ form.email }}
                 <span style="color: red;">
                     {{ form.email.errors }}
-                </span>  
-                
+                </span>
+
             </p>
 
-             <p>
+            <p>
                 {{ form.message }}
                 <span style="color: red;">
                     {{ form.message.errors }}
-                </span>  
-               
-            </p>
+                </span>
 
-            <button class="btn btn-primary" type="submit">Send</button>
+            </p>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">submit</button>
+            </div>
             <p id="message"></p>
         </form>
 
         {% if messages %}
-            {% for message in messages %}
-                <p style="color: green;">{{ message }}</p>
-            {% endfor %}
+        {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+        {% endfor %}
         {% endif %}
     </section>
 
@@ -158,7 +159,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script>
-       
+
     </script>
 
 
