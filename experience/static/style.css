@@ -78,7 +78,8 @@ nav li:first-child{
 body {
     font-family: 'poppins', sans-serif;
 }
-.portfolio{
+
+.portfolio {
     font-weight: 600;
     font-size: 25px;
     color: #206d71d4;
@@ -130,12 +131,30 @@ body {
 }
 
 .other_details {
-    margin-top: 150px;    
+    margin-top: 150px;
 }
 
 .other_details h2 {
     color: #e7efef;
     font-size: 6vw;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.errorlist li {
+    color: red;
+    list-style: none;
+    font-size: 14px;
 }
 
 @media (max-width: 800px) {
@@ -150,7 +169,7 @@ body {
         margin-top: 20px;
     }
 
-    .profile{
+    .profile {
         height: auto;
     }
 }

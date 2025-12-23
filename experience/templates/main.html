@@ -111,12 +111,43 @@
 
     <section id="contact-us">
         <h1>Contact Us</h1>
-        <form method="post">
+        <form method="post" novalidate>
             {% csrf_token %}
-            {{form.as_p}}
-            <button onclick="myFunction()" type="submit">Send</button>
+
+            {{ form.non_field_errors }}
+
+            <p>
+                {{ form.name }}
+                <span class="text-danger">
+                    {{ form.name.errors }}
+                </span>                
+            </p>
+
+             <p>
+                {{ form.email }}
+                <span style="color: red;">
+                    {{ form.email.errors }}
+                </span>  
+                
+            </p>
+
+             <p>
+                {{ form.message }}
+                <span style="color: red;">
+                    {{ form.message.errors }}
+                </span>  
+               
+            </p>
+
+            <button class="btn btn-primary" type="submit">Send</button>
             <p id="message"></p>
         </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: green;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
     </section>
 
     {% block content %}
@@ -127,9 +158,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script>
-        function myFunction() {
-            document.getElementById("message").innerHTML = "Your message has been send successfully";
-        }
+       
     </script>
 
 

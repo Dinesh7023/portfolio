@@ -10,3 +10,11 @@ class ContactForm(forms.ModelForm):
             'email':forms.EmailInput(attrs={'placeholder': 'Your Email Address'}),
             'message':forms.TextInput(attrs={'placeholder': 'Your Message'},)
         }
+
+    def clean_name(self):
+        name = self.cleaned_data.get('name')
+
+        if len(name) < 3:
+            raise forms.ValidationError("Name must be at least 3 characters")
+        return name
+
