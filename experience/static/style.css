@@ -1,79 +1,18 @@
-/* *{
-    margin: 0px;
-    padding: 0px;
-}
-body{
-    min-height: 100vh;
-    background-color: rgba(174, 24, 24, 0.393);
-}
-nav{
-    background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-nav li{
-    height: 50px;
-}
-nav a{
-    height: 100%;
-    padding: 0 30px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: black;
-}
-nav a:hover{
-    background-color: #f0f0f0;
-}
-nav li:first-child{
-    margin-right: auto;
-}
-.menu-button{
-    display: none;
-}
-.sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.sidebar li{
-    width: 100%;
-}
-.sidebar a{
-    width: 100%;
-}
-@media (max-width: 800px) {
-    .hideOnMobile{
-        display: none;
-    }
-    .menu-button{
-        display: block;
-    }    
-}
-@media (max-width: 400px){
-    .sidebar{
-        width: 100%;
-    }
-}
- */
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 ;
+}
+
+ul {
+    list-style-type: none;
+}
 
 body {
     font-family: 'poppins', sans-serif;
@@ -101,7 +40,7 @@ body {
 
 .navbar {
     height: 60px;
-    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.036);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.036);
 }
 
 .photo {
@@ -154,6 +93,7 @@ textarea {
     display: grid;
     place-items: center;
     padding: 20px;
+    min-width: 100px;
 }
 
 #contact-us h1 {
@@ -175,6 +115,21 @@ textarea {
     font-weight: 500;
 }
 
+.contact_info {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin: 10px 0 10px 0;
+}
+
+.linkedin span {
+    padding-right: 3px;
+}
+
+.linkedin a {
+    color: black;
+}
+
 form {
     width: 100%;
     max-width: 500px;
@@ -184,6 +139,81 @@ form {
     color: red;
     list-style: none;
     font-size: 14px;
+}
+
+.card {
+    background-color: #fff;
+    max-height: 500px;
+    border-radius: 10px !important;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 2px 1px 5px #206d71d4;
+}
+
+#Projects {
+    margin-top: 20px;
+}
+
+.card h5{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#Projects h1 {
+    color: #408c92;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.project_detail {
+    margin-top: 50px;
+}
+
+#skills {
+    margin: 50px 0 50px 0;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logos img {
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
+}
+
+#skills h1 {
+    color: #408c92;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    min-height: 250px !important;
+    padding-top: 50px;
+}
+
+.footer li{
+    margin: 10px;
+}
+
+.linkedin_profile a{
+    color: white;
+}
+
+.footer svg{
+    background-color: #fff;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.project_detail{
+    min-height: 500px;
 }
 
 @media (max-width: 800px) {
@@ -200,5 +230,24 @@ form {
 
     .profile {
         height: auto;
+    }
+
+    .contact_info {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 5px;
+    }
+
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .logos img {
+        width: calc(50% - 12px);
+        max-width: 120px;
     }
 }

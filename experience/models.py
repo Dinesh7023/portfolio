@@ -14,6 +14,12 @@ class Contact(models.Model):
 class Project(models.Model):
     project_name = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="uploads/")
+    link = models.CharField(max_length=255, default=None)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.project_name
     
 
     
