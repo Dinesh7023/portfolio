@@ -7,7 +7,7 @@
 
 a {
     text-decoration: none !important;
-    color: #000 ;
+    color: #000;
 }
 
 ul {
@@ -130,6 +130,11 @@ textarea {
     color: black;
 }
 
+.linkedin a:hover {
+    color: #408c92;
+    border-bottom: 1px solid #408c92;
+}
+
 form {
     width: 100%;
     max-width: 500px;
@@ -154,7 +159,7 @@ form {
     margin-top: 20px;
 }
 
-.card h5{
+.card h5 {
     margin-top: 10px;
     font-weight: bold;
 }
@@ -191,29 +196,47 @@ form {
     margin-bottom: 20px;
 }
 
-.footer{
+.footer {
     background-color: black;
     color: white;
     min-height: 250px !important;
     padding-top: 50px;
 }
 
-.footer li{
+.footer li {
     margin: 10px;
 }
 
-.linkedin_profile a{
+.linkedin_profile a {
     color: white;
 }
 
-.footer svg{
+.footer svg {
     background-color: #fff;
     border-radius: 5px;
     margin-right: 5px;
 }
 
-.project_detail{
+.project_detail {
     min-height: 500px;
+}
+
+.project_info a{
+    color: black;
+}
+
+.project_info h3{
+    color: #408c92;
+    margin-top: 10px;
+}
+
+.project_info div{
+    margin-top: 10px;
+}
+
+.project_info a:hover{
+    color: #408c92;
+    border-bottom: 1px solid #408c92
 }
 
 @media (max-width: 800px) {
@@ -239,6 +262,20 @@ form {
         gap: 5px;
     }
 
+    .logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .logos img {
+        width: calc(50% - 12px);
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 1000px) {
     .logos {
         display: flex;
         flex-wrap: wrap;
