@@ -24,6 +24,8 @@ body {
     color: #206d71d4;
 }
 
+
+
 .nav-link {
     font-weight: 600;
     color: #000;
@@ -48,6 +50,29 @@ body {
     width: 100%;
     height: 500px;
     border-radius: 10px;
+}
+
+.typewriter{
+    width: 19ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    font-family: monospace;
+    animation: typing 3s steps(19),
+                blink .6s step-end infinite alternate;
+}
+
+@keyframes typing{
+    from{ width: 0;}
+}
+
+@keyframes blick{
+    50% { border-color: transparent;}
+}
+
+.nav-item a:hover {
+    color: #408c92;
+    border-bottom: 1px solid #408c92;
 }
 
 .profile {
@@ -156,7 +181,7 @@ form {
 }
 
 #Projects {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .card h5 {
@@ -168,6 +193,22 @@ form {
     color: #408c92;
     text-align: center;
     padding-bottom: 10px;
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 100vh;
+    margin-bottom: 20px;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project_detail {
@@ -178,10 +219,38 @@ form {
     margin: 50px 0 50px 0;
 }
 
+.mail a {
+    color: black;
+}
+
+.phone1:hover {
+    color: #408c92;
+    border-bottom: 1px solid #408c92;
+}
+
+.mail a:hover {
+    color: #408c92;
+    border-bottom: 1px solid #408c92;
+}
+
 .logos {
     display: flex;
     justify-content: space-between;
     gap: 25px;
+    animation: fadeUp both;
+    animation-timeline: view();
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .logos img {
@@ -221,20 +290,20 @@ form {
     min-height: 500px;
 }
 
-.project_info a{
+.project_info a {
     color: black;
 }
 
-.project_info h3{
+.project_info h3 {
     color: #408c92;
     margin-top: 10px;
 }
 
-.project_info div{
+.project_info div {
     margin-top: 10px;
 }
 
-.project_info a:hover{
+.project_info a:hover {
     color: #408c92;
     border-bottom: 1px solid #408c92
 }
@@ -273,6 +342,12 @@ form {
         width: calc(50% - 12px);
         max-width: 120px;
     }
+
+    .navbar a:hover {
+        color: #408c92;
+        border-bottom: 1px solid #408c92;
+        width: 50px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -286,5 +361,11 @@ form {
     .logos img {
         width: calc(50% - 12px);
         max-width: 120px;
+    }
+
+    .navbar a:hover {
+        color: #408c92;
+        border-bottom: 1px solid #408c92;
+        width: 50px;
     }
 }
