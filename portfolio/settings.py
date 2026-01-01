@@ -20,12 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3mjeh30_0!)8u%78n_a4-w700nbzw5)1vzv%j^y@3f+y7!0fo5'
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'RENDER'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:    
+		ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -43,6 +47,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+	'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,16 +81,25 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "portfolio",
-        'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': '7023',
-        'PORT': '5433',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "portfolio",
+#         'HOST': 'localhost',
+#         'USER': 'postgres',
+#         'PASSWORD': '7023',
+#         'PORT': '5433',
+#     }
+# }
+
+# DATABASES['default'].update(db_from_env)
+
+
+# To deploy on Render.com
+import dj_database_url
+
+db_from_env = dj_database_url.config(default='postgresql://postgres:postgres@localhost:5432/<name_of_database>', conn_max_age=600)
+
 
 
 # Password validation
