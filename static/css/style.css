@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+US+Modern+Guides&family=Playwrite+US+Modern:wght@100..400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    background-color: #11071F;
+    scroll-behavior: smooth;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans", sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+    /* color: white !important; */
+}
+
+
+ul li {
+    list-style: none;
+}
+
+:root {
+    --primary-color: #11071F;
+
+}
+
+/* Navbar */
+.navbar,
+#container,
+.navbar-brand,
+.collapse,
+.navbar-nav,
+.nav-link {
+    background-color: #1A0B2E;
+}
+
+.navbar-toggler-icon {
+    background-image: url('../images/menu.png');
+    background-color: #1A0B2E;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar a:hover {
+    color: rebeccapurple;
+}
+
+.nav-item a:hover,
+a.active {
+    color: rebeccapurple;
+    background-color: #1A0B2E;
+    font-weight: 500;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-toggler {
+    padding: .15rem .50rem !important;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+}
+
+/* Hero section */
+
+.hero-section {
+    margin-top: 50px;
+}
+
+.other_details {
+    text-align: center;
+}
+
+.other_details p {
+    color: white;
+}
+
+.photo img {
+    width: 65%;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid rgb(111, 71, 151);
+    margin: auto;
+    position: relative;
+    box-shadow: 0px -4px 10px 1px rebeccapurple;
+
+}
+
+.photo {
+    width: 100%;
+    border-radius: 50%;
+    margin-top: 20px;
+
+}
+
+#Personal_details {
+    text-align: start;
+    padding-top: 30px;
+}
+
+#Personal_details h2 {
+    font-weight: bold;
+    font-size: calmp(3rem, 8vw, 6rem);
+    background: linear-gradient(135deg, rebeccapurple, rgb(187, 145, 230));
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientshift 3s ease infinite;
+}
+
+@keyframes gradientshift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.typewriter {
+    color: white;
+    width: 19ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rebeccapurple;
+    font-family: monospace;
+    margin: auto;
+    padding-bottom: 10px;
+    animation: typing 3s steps(19),
+        blink .6s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blick {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@media (min-width: 768px) {
+    .typewriter {
+        margin: 0;
+    }
+}
+
+
+
+/* Projects */
+
+.projects {
+    padding-top: min(15rem, 15%);
+}
+
+.projects h1 {
+    text-align: center;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 50% 40%;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.project-details {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.project-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 2.5px;
+    height: 100%;
+    background-color: white;
+}
+
+.project h5 {
+    color: white;
+}
+
+.project-name {
+    background-image: linear-gradient(to left, rebeccapurple, rgb(192, 136, 249), rebeccapurple);
+    border: 2px solid var(--primary-color) !important;
+    box-shadow: 0px -2px 2px 0px rebeccapurple;
+    padding: 10px;
+    border-radius: 15px;
+    height: max-content;
+    width: 100%;
+}
+
+.card,
+h5,
+p,
+span {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: none !important;
+}
+
+.project-name {
+    margin: 0px;
+}
+
+.card p {
+    margin: 0px;
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+
+    .projects {
+        padding-top: min(5rem, 5%);
+    }
+
+    .project {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        gap: 20px;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .project-name {
+        width: max-content;
+    }
+
+
+}
+
+/* skills */
+
+.skills {
+    padding-top: min(15rem, 15%);
+}
+
+.skills h1 {
+    padding-bottom: min(50px, 20%);
+    text-align: center;
+    color: white;
+}
+
+.skills_list {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+
+.skills_list img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: scale(20px);
+}
+
+
+@media (min-width:768px) {
+    #Personal_details {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .photo {
+        width: 65%;
+    }
+
+    .other_details {
+        color: white;
+        text-align: start;
+    }
+
+    .skills_list {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .skills {
+        padding-top: min(5rem, 5%);
+    }
+
+}
+
+
+/* contact us */
+
+.contact-us {
+    padding-top: min(10rem, 10%);
+    margin-bottom: min(10rem, 20%);
+}
+
+.contact-us h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+p.mail a,
+.linkedin a {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .contact-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .form-control {
+        width: 50% !important;
+        margin: auto;
+    }
+
+}

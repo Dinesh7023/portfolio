@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>PORTFOLIO</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container" id="container">
+                <a class="navbar-brand" href="/">Protfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" id="navIcon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact-us">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="container" id="Personal_details">
+            <div class="other_details">
+                <h4>Hello,</h4>
+                <h2>I'm Dinesh Kumar,</h2>
+                <h5 class="typewriter text-center">Software Developer</h5>
+                <p>I am a Software Developer with 2+ years of experience in Odoo development. Recently, I have been
+                    learning and working with Django and Flask.</p>
+            </div>
+
+            <div class="photo">
+
+                <img src="{{ url_for('static', filename='images/my_photo.png') }}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <h1>Projects</h1>
+            <div class="cards">
+                <div class="card">
+                    <div class="project">
+                        <h5 class="project-name">SUNDAY IN LISBOA</h5>
+                        <div class="project-details">
+                            <p class="project-desc">Implemented OdooERP, including category-wise product image and
+                                pricing
+                                uploads for e-commerce, website product publishing, and accounting tax configuration.
+                            </p>
+                            <p class="project-stack"><span>Tech Stack: </span> OdooERP</p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="project">
+                        <h5 class="project-name">MADURAIMARKET</h5>
+                        <div class="project-details">
+                            <p class="project-desc">UIDevelopment: Created the website layout and design to be easy to
+                                use
+                                and
+                                mobile-friendly. Admin Panel: Developed an admin panel to manage products, users, and
+                                orders.
+                                RESTfulAPIs:
+                                Built APIs for user registration, product management, and order processing.
+                                configuration.</p>
+                            <p class="project-stack"><span>Tech Stack: </span>HTML, CSS, Laravel, RESTfulAPIs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="project">
+                        <h5 class="project-name">DR.SOBI'S DENTAL ELITE DENTAL CARE</h5>
+                        <div class="project-details">
+                            <p class="project-desc">Developed a responsive static website for a dental clinic using
+                                HTML,
+                                CSS,
+                                and Bootstrap. Added an appointment form integrated with EmailJS for email
+                                notifications and WhatsApp for direct messaging. Created a services page to
+                                display dental treatments with photos.</p>
+                            <p class="project-stack"><span>Tech Stack: </span>HTML, CSS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="project">
+                        <h5 class="project-name">THE COFFEE SPOT</h5>
+                        <div class="project-details">
+                            <p class="project-desc">Built a static website using Django with proper static file handling
+                                (CSS
+                                and
+                                images) and deployed it on Render using Gunicorn and WhiteNoise.</p>
+                            <p class="project-stack"><span>Tech Stack: </span>Django, HTML, CSS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="project">
+                        <h5 class="project-name">VAMANA AROMAS LLP</h5>
+                        <div class="project-details">
+                            <p class="project-desc">Implemented Odoo ERP with custom workflows, automated processes,
+                                custom
+                                module development, user role access rights, custom field creation, and record
+                                rule configurations to support secure and efficient business operations.</p>
+                            <p class="project-stack"><span>Tech Stack: </span>Odoo ERP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h1>Skills</h1>
+            <ul class="skills_list">
+                <li><img src="{{ url_for('static', filename='images/odoo_logo.png') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='images/python_logo.webp') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='images/html_logo.webp') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='images/css_logo.webp') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='images/django_logo.png') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='images/flask.jpg') }}" alt=""></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact-us" id="contact-us">
+        <div class="container">
+            <h1>Get in touch</h1>
+            <div class="contact-icons">
+                <p class="phone">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#fff">
+                            <path
+                                d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                        </svg></span><span class="phone1">+91 9080443268</span>
+                </p>
+                <p class="mail">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#fff">
+                            <path
+                                d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                        </svg></span><a href="mailto:dineshkumars.softdev@gmail.com">
+                        dineshkumars.softdev@gmail.com</a>
+                </p>
+
+                <p class="linkedin">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="24px" height="24px"
+                            fill="#fff">
+                            <path
+                                d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z" />
+                        </svg></span><a href="https://www.linkedin.com/in/dinesh-kumar-softdev">Linkedin Profile</a>
+                </p>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <p style="color: green;">{{ messages[0] }}</p>
+            {% endif %}
+            {% endwith %}
+
+            <form id="contact-form" action="/" method="post">
+                <input class="form-control" type="text" name="name" placeholder="Your Name" required><br>
+                <input class="form-control" type="email" name="email" placeholder="Your Email" required><br>
+                <textarea class="form-control" name="message" placeholder="Your Message" required></textarea><br>
+                <div class="text-center">
+                    <button class="btn btn-primary button ms-auto" type="submit">Send Message</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("jHBT-pqzLGfZwf8ri");
+        })();
+    </script>
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_oedv9tn", "template_xdqyyam", this)
+                .then(function () {
+                    alert("Message sent successfully!");
+                }, function (error) {
+                    alert("Failed to send message.");
+                    console.log(error);
+                });
+        });
+    </script>
+    <script>
+        const navbarCollapse = document.getElementById('navbarNav');
+        const navIcon = document.getElementById('navIcon');
+
+        navbarCollapse.addEventListener('show.bs.collapse', function () {
+            navIcon.style.backgroundImage = "url('/static/images/close.png')";
+        });
+
+        navbarCollapse.addEventListener('hide.bs.collapse', function () {
+            navIcon.style.backgroundImage = "url('/static/images/menu.png')";
+        });
+
+    </script>
+</body>
+
+</html>
