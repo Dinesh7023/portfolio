@@ -9,6 +9,12 @@
     font-family: "Noto Sans", sans-serif;
 }
 
+*,
+::after,
+::before {
+    box-sizing: border-box !important;
+}
+
 a {
     text-decoration: none !important;
     /* color: white !important; */
@@ -173,30 +179,42 @@ a.active {
 
 .projects h1 {
     text-align: center;
+    padding-bottom: 25px;
 }
 
 .project {
     display: grid;
-    grid-template-columns: 50% 40%;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding-bottom: 20px;
 }
 
 .project-details {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
     padding: 15px;
     border-radius: 10px;
+}
+
+.card {
     position: relative;
 }
 
-.project-details::before {
+.card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -10%;
-    width: 2.5px;
+    left: 50%;
+    width: 2px;
     height: 100%;
     background-color: white;
+    opacity: 0.5;
 }
 
 .project h5 {
@@ -204,21 +222,29 @@ a.active {
 }
 
 .project-name {
-    background-image: linear-gradient(to left, rebeccapurple, rgb(192, 136, 249), rebeccapurple);
-    border: 2px solid var(--primary-color) !important;
-    box-shadow: 0px -2px 2px 0px rebeccapurple;
+    /* background-image: linear-gradient(to left, rebeccapurple, rgb(192, 136, 249), rebeccapurple);
+    border: 2px solid var(--primary-color) !important; */
+    /* box-shadow: 0px -2px 2px 0px rebeccapurple; */
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     height: max-content;
     width: 100%;
+    font-size: clamp(.5rem, 5vw, 17px);
+}
+
+.project-desc {
+    font-size: clamp(.2rem, 5vw, 13px);
+    padding-bottom: 10px;
 }
 
 .card,
 h5,
 p,
-span {
+span,
+.project-stack,
+ul {
     background-color: transparent;
-    color: var(--primary-color);
+    color: white;
     border: none !important;
 }
 
@@ -231,6 +257,74 @@ span {
     text-align: justify;
 }
 
+li {
+    background-color: transparent;
+    font-size: clamp(.5rem, 5vw, 14px);
+    margin: 5px;
+}
+
+.odoo {
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: rgba(96, 125, 139, 0.12);
+    color: #607D8B;
+    border: 2px solid #607D8B;
+}
+
+.html {
+    background-color: rgba(3, 169, 244, 0.12);
+    color: #03A9F4;
+    border: 2px solid #03A9F4;
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.css {
+    background-color: rgba(216, 27, 96, 0.12);
+    color: #D81B60;
+    border: 2px solid #D81B60;
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.django {
+    background-color: rgba(0, 150, 136, 0.12);
+    color: #009688;
+    border: 2px solid #009688;
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.laravel {
+    background-color: rgba(123, 31, 162, 0.12);
+    color: #7B1FA2;
+    border: 2px solid #7B1FA2;
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.RestfilAPIs {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #FFC107;
+    border: 2px solid #FFC107;
+    width: max-content;
+    padding: 2.5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+
+
 @media (min-width: 768px) {
 
     .projects {
@@ -239,7 +333,7 @@ span {
 
     .project {
         display: grid;
-        grid-template-columns: 40% 40%;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
         justify-content: center;
         padding-bottom: 20px;
@@ -247,6 +341,32 @@ span {
 
     .project-name {
         width: max-content;
+        margin: auto;
+        font-size: clamp(15px, 5vw, 17px);
+
+    }
+
+    .card {
+        position: relative;
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 45%;
+        width: 2px;
+        height: 100%;
+        background-color: white;
+        opacity: 0.5;
+    }
+
+    .project-desc {
+        font-size: clamp(.2rem, 5vw, 15px);
+    }
+
+    .project-stack ul{
+        display: flex;
     }
 
 
@@ -324,7 +444,7 @@ span {
 }
 
 p.mail a,
-.linkedin a {
+.linkedin a, .phone1 {
     color: white;
 }
 
