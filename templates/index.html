@@ -26,6 +26,9 @@
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#aboutme">About Me</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
@@ -46,20 +49,51 @@
                 <h4>Hello,</h4>
                 <h2>I'm Dinesh Kumar,</h2>
                 <h5 class="typewriter text-center">Software Developer</h5>
-                <p>I am a Software Developer with 2+ years of experience in Odoo development. Recently, I have been
-                    learning and working with Django and Flask.</p>
+                <p>2+ years building and customizing Odoo ERP solutions. Currently developing e-commerce and static
+                    websites using Django and Flask.</p>
             </div>
 
             <div class="photo">
-
                 <img src="{{ url_for('static', filename='images/my_photo.png') }}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me" id="aboutme">
+        <div class="container">
+            <h1>About Me</h1>
+            <div class="mac-window">
+                <div class="mac-header">
+                    <div class="dots">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                    <span class="file-name">aboutme.py</span>
+                </div>
+
+                <div class="code-body">
+                    <pre><code>
+class Developer:
+
+    def __init__(self):
+        self.name = "Dinesh Kumar"
+        self.role = "Software Developer"
+        self.experience = "2+ Years"
+        self.specialization = "Odoo & ERP Customization"
+        self.education = "Master of Commerce"
+
+    def about_me(self):
+        return "Passionate about building ERP solutions and automation."
+</code></pre>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="projects" id="projects">
         <div class="container">
-            <h1>Projects</h1>
+            <h1>Featured Projects</h1>
             <div class="cards">
                 <div class="card">
                     <div class="project">
@@ -166,14 +200,36 @@
     <section class="skills" id="skills">
         <div class="container">
             <h1>Skills</h1>
-            <ul class="skills_list">
-                <li><img src="{{ url_for('static', filename='images/odoo_logo.png') }}" alt=""></li>
-                <li><img src="{{ url_for('static', filename='images/python_logo.webp') }}" alt=""></li>
-                <li><img src="{{ url_for('static', filename='images/html_logo.webp') }}" alt=""></li>
-                <li><img src="{{ url_for('static', filename='images/css_logo.webp') }}" alt=""></li>
-                <li><img src="{{ url_for('static', filename='images/django_logo.png') }}" alt=""></li>
-                <li><img src="{{ url_for('static', filename='images/flask.jpg') }}" alt=""></li>
-            </ul>
+            <div class="skills-list">
+                <div class="backend">
+                    <h5>Backend & Web</h5>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/python_logo.webp') }}" alt=""></li>
+                        <li><img src="{{ url_for('static', filename='images/django_logo.png') }}" alt=""></li>
+                        <li><img src="{{ url_for('static', filename='images/flask.jpg') }}" alt=""></li>
+                    </ul>
+                </div>
+                <div class="frontend">
+                    <h5>Frontend</h5>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/html_logo.webp') }}" alt=""></li>
+                        <li><img src="{{ url_for('static', filename='images/css_logo.webp') }}" alt=""></li>
+                    </ul>
+                </div>
+                <div class="erp">
+                    <h5>ERP</h5>
+                    <ul>
+                        <li><img src="{{ url_for('static', filename='images/odoo_logo.png') }}" alt=""></li>
+
+                    </ul>
+                </div>
+                <div class="database">
+                    <h5>Database</h5>
+                </div>
+                <div class="tools">
+                    <h5>Tools</h5>
+                </div>
+            </div>
         </div>
     </section>
 

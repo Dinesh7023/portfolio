@@ -12,7 +12,7 @@
 *,
 ::after,
 ::before {
-    box-sizing: border-box !important;
+    box-sizing: none !important;
 }
 
 a {
@@ -140,26 +140,37 @@ a.active {
 
 .typewriter {
     color: white;
+    display: inline-block;
     width: 19ch;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid rebeccapurple;
     font-family: monospace;
     margin: auto;
-    padding-bottom: 10px;
-    animation: typing 3s steps(19),
-        blink .6s step-end infinite alternate;
+    animation: typing 3s steps(19) forwards,
+        blink 0.8s infinite;
+
 }
 
 @keyframes typing {
     from {
-        width: 0;
+        width: 0
+    }
+
+    to {
+        width: 19ch
     }
 }
 
-@keyframes blick {
+@keyframes blink {
+
+    0%,
+    100% {
+        border-right-color: rebeccapurple;
+    }
+
     50% {
-        border-color: transparent;
+        border-right-color: transparent;
     }
 }
 
@@ -169,6 +180,82 @@ a.active {
     }
 }
 
+/* About me */
+
+.about-me {
+    padding-top: min(60px, 25%);
+}
+
+.about-me h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    text-align: center;
+    padding-bottom: 25px;
+    font-weight: 500;
+}
+
+.mac-window {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.mac-header {
+    background: #f5f5f7;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+    background-color: transparent;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.mac-header span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    margin-left: 25px;
+}
+
+pre,
+code {
+    background-color: transparent;
+    color: #2d2d2d;
+}
+
+.code-body {
+    padding: 25px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: #2d2d2d !important;
+    background: #ffffff;
+    overflow-x: auto;
+}
 
 
 /* Projects */
@@ -180,6 +267,7 @@ a.active {
 .projects h1 {
     text-align: center;
     padding-bottom: 25px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 .project {
@@ -237,15 +325,18 @@ a.active {
     padding-bottom: 10px;
 }
 
+.card {
+    border: none !important;
+}
+
 .card,
 h5,
-p,
+.project-desc,
 span,
 .project-stack,
 ul {
     background-color: transparent;
     color: white;
-    border: none !important;
 }
 
 .project-name {
@@ -365,7 +456,7 @@ li {
         font-size: clamp(.2rem, 5vw, 15px);
     }
 
-    .project-stack ul{
+    .project-stack ul {
         display: flex;
     }
 
@@ -382,6 +473,7 @@ li {
     padding-bottom: min(50px, 20%);
     text-align: center;
     color: white;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 .skills_list {
@@ -441,10 +533,12 @@ li {
 .contact-us h1 {
     text-align: center;
     padding-bottom: 20px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 p.mail a,
-.linkedin a, .phone1 {
+.linkedin a,
+.phone1 {
     color: white;
 }
 
