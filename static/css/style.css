@@ -18,6 +18,7 @@ body {
 
 a {
     text-decoration: none !important;
+    color: white !important;
 }
 
 
@@ -128,16 +129,16 @@ a.active {
 #Personal_details h2 {
     font-weight: bold;
     font-size: clamp(1.5rem, 6vw, 3rem);
-    background: linear-gradient(135deg, rebeccapurple, rgb(132, 99, 163));
+    background: linear-gradient(45deg, rebeccapurple, rgb(132, 99, 163));
     background-clip: text;
     color: transparent;
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientshift 3s ease infinite;
+    /* animation: gradientshift 3s ease infinite; */
 }
 
-@keyframes gradientshift {
+/* @keyframes gradientshift {
     0% {
         background-position: 0% 50%;
     }
@@ -149,7 +150,7 @@ a.active {
     100% {
         background-position: 0% 50%;
     }
-}
+} */
 
 .typewriter {
     color: white;
@@ -187,6 +188,75 @@ a.active {
     }
 }
 
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    animation: slideLeft 1s ease forwards;
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(60px);
+    animation: slideRight 1s ease forwards;
+}
+
+.slide-down {
+    opacity: 0;
+    transform: translateY(-60px);
+    animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn-3d {
+    background: rebeccapurple;
+    color: white;
+    border: none;
+    transition: 0.2s ease;
+    padding: 7px;
+    font-weight: 500;
+}
+
+.btn-3d:hover {
+    transform: translateY(-3px);
+}
+
+.btn-3d:active {
+    transform: translateY(2px);
+}
+
 @media (min-width: 768px) {
     .typewriter {
         margin: 0;
@@ -200,7 +270,7 @@ a.active {
     }
 
     .photo {
-        width: 65%;
+        width: 50%;
     }
 
     .other_details {
@@ -437,19 +507,20 @@ li {
     font-weight: 500;
 }
 
-.fadeup{
+.fadeup {
     animation: fadeup both;
     animation-timeline: view(20% 10%);
 }
 
-@keyframes fadeup{
-    from{
+@keyframes fadeup {
+    from {
         opacity: 0;
-        transform: translateY(10px) scale(0.5);        
+        transform: translateY(10px) scale(0.5);
     }
-    to{
-       opacity: 1;
-       transform: translateY(0) scale(1);
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -549,7 +620,7 @@ li {
     border-radius: 10px;
 }
 
-.skills-list img:hover{
+.skills-list img:hover {
     transform: scale(1);
 }
 
@@ -589,6 +660,16 @@ p.mail a,
 .linkedin a,
 .phone1 {
     color: white;
+    transition: border-bottom 2s ease;
+
+}
+
+p.mail a:hover,
+.linkedin a:hover, .phone1:hover {
+    border-bottom: 2px solid white;
+    color: white;
+    cursor: pointer;
+    width: max-content;
 }
 
 .button {

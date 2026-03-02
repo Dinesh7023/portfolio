@@ -46,16 +46,17 @@
     <section class="hero-section">
         <div class="container" id="Personal_details">
             <div class="other_details">
-                <h4>Hello,</h4>
-                <h2>I'm Dinesh Kumar,</h2>
+                <h4 class="slide-down">Hello,</h4>
+                <h2 class="slide-left">I'm Dinesh Kumar,</h2>
                 <h5 class="typewriter text-center">Software Developer</h5>
-                <p>2+ years building and customizing Odoo ERP solutions. Currently developing e-commerce and static
+                <p class="slide-left">2+ years building and customizing Odoo ERP solutions. Currently developing
+                    e-commerce and static
                     websites using Django and Flask.</p>
                 <!-- <a href="{{ url_for('static', filename='resume/Dinesh_Kumar_CV.pdf') }}" download class="btn button">Download CV</a> -->
-                <a class=" btn button" href="#contact-us">Contact Now</a>
+                <a class=" btn button fade-up" href="#contact-us">Contact Now</a>
             </div>
 
-            <div class="photo">
+            <div class="photo slide-right">
                 <img src="{{ url_for('static', filename='images/my_photo.png') }}" alt="">
             </div>
         </div>
@@ -82,11 +83,11 @@ class Developer:
         self.name = "Dinesh Kumar"
         self.role = "Software Developer"
         self.experience = "2+ Years"
-        self.specialization = "Odoo & ERP Customization"
         self.education = "Master of Commerce"
+        self.certification = "Python Programming"
 
     def about_me(self):
-        return "Passionate about building ERP solutions and automation."
+        return "I work on custom business workflows and web development."
 </code></pre>
                 </div>
             </div>
@@ -150,6 +151,11 @@ class Developer:
                                 and Bootstrap. Added an appointment form integrated with EmailJS for email
                                 notifications and WhatsApp for direct messaging. Created a services page to
                                 display dental treatments with photos.</p>
+                                <!-- <a href="https://drsobiselitedentalcare.in/">Live Demo<span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="15px" fill="#FFFFFF">
+                                        <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z" />
+                                    </svg></span></a> -->
                             <div class="project-stack">
                                 <ul>
                                     <li>Tech Statck: </li>
@@ -168,6 +174,11 @@ class Developer:
                                 (CSS
                                 and
                                 images) and deployed it on Render using Gunicorn and WhiteNoise.</p>
+                            <a class="demo" href="https://the-coffee-spot.onrender.com/">Live Demo<span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="15px" fill="#FFFFFF">
+                                        <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z" />
+                                    </svg></span></a>
                             <div class="project-stack">
                                 <ul>
                                     <li>Tech Statck: </li>
@@ -176,6 +187,7 @@ class Developer:
                                     <li class="django">Django</li>
                                 </ul>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -265,65 +277,62 @@ class Developer:
                         <textarea class="form-control" name="message" placeholder="Your Message"
                             required></textarea><br>
                         <div class="text-center">
-                            <button class="btn button ms-auto" type="submit">Send Message</button>
+                            <button class="button ms-auto btn-3d" type="submit">Send Message</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
 
 
 
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("jHBT-pqzLGfZwf8ri");
+            })();
+        </script>
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function (event) {
+                event.preventDefault();
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function () {
-            emailjs.init("jHBT-pqzLGfZwf8ri");
-        })();
-    </script>
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            emailjs.sendForm("service_oedv9tn", "template_xdqyyam", this)
-                .then(function () {
-                    alert("Message sent successfully!");
-                }, function (error) {
-                    alert("Failed to send message.");
-                    console.log(error);
-                });
-        });
-    </script>
-    <script>
-        const navbarCollapse = document.getElementById('navbarNav');
-        const navIcon = document.getElementById('navIcon');
-
-        navbarCollapse.addEventListener('show.bs.collapse', function () {
-            navIcon.style.backgroundImage = "url('/static/images/close.png')";
-        });
-
-        navbarCollapse.addEventListener('hide.bs.collapse', function () {
-            navIcon.style.backgroundImage = "url('/static/images/menu.png')";
-        });
-
-    </script>
-    <script>
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
-            link.addEventListener('click', function () {
-                var navbarCollapse = document.querySelector('.navbar-collapse');
-                var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
+                emailjs.sendForm("service_oedv9tn", "template_xdqyyam", this)
+                    .then(function () {
+                        alert("Message sent successfully!");
+                    }, function (error) {
+                        alert("Failed to send message.");
+                        console.log(error);
+                    });
             });
-        });
-    </script>
+        </script>
+        <script>
+            const navbarCollapse = document.getElementById('navbarNav');
+            const navIcon = document.getElementById('navIcon');
+
+            navbarCollapse.addEventListener('show.bs.collapse', function () {
+                navIcon.style.backgroundImage = "url('/static/images/close.png')";
+            });
+
+            navbarCollapse.addEventListener('hide.bs.collapse', function () {
+                navIcon.style.backgroundImage = "url('/static/images/menu.png')";
+            });
+
+        </script>
+        <script>
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    var navbarCollapse = document.querySelector('.navbar-collapse');
+                    var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                        toggle: false
+                    });
+                    bsCollapse.hide();
+                });
+            });
+        </script>
 </body>
 
 </html>
