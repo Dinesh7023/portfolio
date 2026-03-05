@@ -49,6 +49,7 @@ ul li {
 
 .navbar-toggler-icon {
     background-image: url('../images/menu.png');
+    transition: 0.3s ease;
 }
 
 .navbar-brand {
