@@ -2,7 +2,7 @@
 
 
 body {
-    background-color: #11071F !important;
+    background-color: #0f032d !important;
     scroll-behavior: smooth;
     color: white;
     margin: 0px;
@@ -28,6 +28,7 @@ ul li {
 
 :root {
     --primary-color: #11071F;
+    --seconday-color: #905bf4;
 
 }
 
@@ -67,12 +68,12 @@ ul li {
 }
 
 .nav-item a:hover {
-    color: rebeccapurple;
+    color: var(--seconday-color);
 }
 
 .nav-item a:hover,
 a.active {
-    color: rebeccapurple !important;
+    color: var(--seconday-color) !important;
     font-weight: 500;
 }
 
@@ -107,10 +108,10 @@ a.active {
     width: 65%;
     border-radius: 50%;
     display: block;
-    border: 2px solid rgb(111, 71, 151);
+    border: 2px solid var(--seconday-color);
     margin: auto;
     position: relative;
-    box-shadow: 0px -4px 10px 1px rebeccapurple;
+    box-shadow: 0px -4px 10px 1px var(--seconday-color);
 
 }
 
@@ -129,7 +130,7 @@ a.active {
 #Personal_details h2 {
     font-weight: bold;
     font-size: clamp(1.5rem, 6vw, 3rem);
-    background: linear-gradient(45deg, rebeccapurple, rgb(132, 99, 163));
+    background: linear-gradient(45deg, var(--seconday-color) );
     background-clip: text;
     color: transparent;
     background-size: 300% 300%;
@@ -158,7 +159,7 @@ a.active {
     width: 19ch;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid rebeccapurple;
+    border-right: 2px solid var(--seconday-color);
     font-family: monospace;
     margin: auto;
     animation: typing 3s steps(19) forwards,
@@ -180,7 +181,7 @@ a.active {
 
     0%,
     100% {
-        border-right-color: rebeccapurple;
+        border-right-color: var(--seconday-color);
     }
 
     50% {
@@ -241,7 +242,7 @@ a.active {
 }
 
 .btn-3d {
-    background: rebeccapurple;
+    background: var(--seconday-color);
     color: white;
     border: none;
     transition: 0.2s ease;
@@ -618,10 +619,11 @@ li {
     height: 75px;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 2s ease;
 }
 
 .skills-list img:hover {
-    transform: scale(1);
+    transform: scale(1.2);
 }
 
 
@@ -656,6 +658,10 @@ li {
 
 }
 
+.contact-icons span{
+    margin-right: 5px;
+}
+
 p.mail a,
 .linkedin a,
 .phone1 {
@@ -673,9 +679,9 @@ p.mail a:hover,
 }
 
 .button {
-    background-color: rebeccapurple !important;
+    background-color: var(--seconday-color) !important;
     color: white !important;
-    border: 2px solid rgb(82, 36, 128) !important;
+    border: 2px solid rgb(123, 65, 181) !important;
     border-radius: 10px !important;
 }
 
@@ -692,12 +698,10 @@ p.mail a:hover,
 .form-control::placeholder {
     color: #cabebe !important;
     opacity: 1;
-    /* Important for Firefox */
 }
 
 @media (min-width: 768px) {
     .contact-icons {
-        /* text-align: center; */
         padding-left: 50px;
     }
 
